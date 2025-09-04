@@ -1,0 +1,55 @@
+정수형 -> short int, int, long int, 
+long long int => signed 또는 unsigned
+
+문자형 -> char => signed 또는 unsigned
+실수형 -> float, double, long double
+열거형 (enumerated type)
+파생형 (derived types)
+배열형 (array type), 구조체형 (structure type),
+공용체형 (union type), 포인터형 (pointer type)
+
+============================================================
+
+& 정수형
+
+char 1byte / -128 ~ 127
+short int 2byte / -32768 ~ 32767
+int 4byte / -21억정도 ~ 21억
+long int 4byte / -21억정도 ~ 21억
+long long int 8byte / 너무 많음 범위가
+
+앞에 unsigned 가 붙으면 0부터 양의 정수
+
+& 실수형
+
+float 4byte
+double 8byte
+long double 8byte
+============================================================
+& 정수 형태의 값을 표현
+
+& signed형과 unsigned형으로 표현할 수 있음
+- signed가 디폴트임
+
+& 값을 저장하기 위한 메모리의 크기
+sizeof(char) <= sizeof(short) <= sizeof(int)
+<= sizeof(long) <= sizeof(long long)
+
+============================================================
+상수(constant) : 항상 고정된 값을 갖는 자료
+
+& 정수형 상수
+10 진수 / 10, -45, 999 / 0 ~ 9 범위의 숫자를 사용함, 숫자의 첫 자리는 0이 아니어야 함
+8진수 / 012, -055 / 0 ~ 7 범위의 숫자를 사용함  숫자의 첫 자리는 0으로 시작함
+16진수 / 0x0c, -0x2D / 0~9, a~f 를 사용함 숫자의 첫 자리는  0x로 시작함
+unsigned형 / 10u, 012u, 0X0CU / u: 부호 없는 상수를 표현하는 접미사
+long형 / 123451, 0XFFL / l: long 형의 상수를 표현하는 접미사
+
+============================================================
+부동소수점 형 상수
+
+double형이 기본 자료형임
+소수형식 3.14, -12.345
+지수형식 1.2e3, 5e-2 / 10진수와 e를 사용하여 표현
+float형 3.14f, 0.314E1F / f:float형을 표현하는 접미사
+long double형 3.14l, 0.314E1L / l:long double형을 표현하는 접미사
