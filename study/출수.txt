@@ -1,0 +1,100 @@
+- 모든 문장은 문법과 의미에 맞게 토큰을 나열하여 작성한다.
+(토큰 => 단어)
+
+- 선행처리 지시어 = [include 같은] 을 제외하곤 세미콜론을 붙임
+
+- 예약어는 크게 3가지가있음
+1. 자료형 예약어
+char, int, float, short, long, double, 
+unsigned, struct, union, enum, void, typedef
+2. 기억 관련 예약어
+auto, static, extern, register, volatile, sizeof
+3. 제어 관련 예약어
+if, else, switch, case, default, for, while, do, break, continue, return
+
+- 문자하나는 작은 따옴표, 문자열은 쌍따옴표를 사용!
+
+- /* */ <- 사이에 작성한 모든 문장 설명
+- // 그 행의 끝까지 설명문
+
+- 선행처리기 (preprocessing)?
+컴파일에 앞서 소스 프로그램을 가공하여 컴파일러가
+실제로 번역할 소스 프로그램을 만드는 것
+
+#include <stdio.h> -> prinf 와 같은
+
+문장 끝에 세미콜론 사용 X
+
+- 대표적인 선행처리
+⚫ 헤더파일 포함: #include
+⚫ 매크로 선언 및 해제: #define, #undef
+⚫ 조건부 컴파일: #if, #else, #elif, #endif
+
+- 개인적인 헤더파일 사용시 선행처리 선언은 
+#include "a.h"
+
+
+#include <파일명> => 표준 디렉토리에서 파일을 찾음
+#include "파일명" => 현재 사용 중인 디렉토리, 또는 직접 지정한
+경로에서 파일을 찾음
+
+매크로(macro)란?
+
+특정 코드 패턴으로 치환되도록 정의된 명칭
+⚫
+‘#define’을 사용하여 자주 사용되는 명령이나 수식 또는
+상수에 이를 대표하는 이름(매크로 이름)을 붙여 사용
+
+- 매크로 상수 정의
+
+#define 매크로명 값
+#define PI 3.141592
+
+- 매크로 상수 해제
+#undef 매크로명
+
+-------------------------------------------------
+그럼 매크로와 변수 선언의 차이는??
+
+#define PI 3.141592 와
+float PI = 3.14 랑 뭐가 달라?
+
+#define PI 3.141592 <= 여기서 선언된 PI는 변수 선언이 아니라
+PI라는 글자가 나오게되면 저 3.141592라는 값으로 바꿔줘의 
+개념 메모리를 안잡아 먹음 복붙에 개념 단순함
+
+하지만 float PI = 3.14 얘는 변수 선언을 함으로서 
+저 주소값을 가지고 있는 메모리가 할당됩니다.
+
+그래서 매크로 선언은 타입이 없습니다.
+
+- 매크로 함수 정의
+
+#define 매크로명(인수리스트) (수식)
+#define C_AREA(x) (3.141592 * (x) * (x))
+
+-------------------------------------------------
+
+C 언어의 자료형 )
+
+1 ) 정수 자료형
+정수형 + 문자형
+
+정수형 : short int long int long long int
+문자형 : char => signed unsigned
+
+2 ) 실수 자료형
+float double long double
+
+3 ) 열거형 (enumerated type)
+
+4 ) 파생형 (derived types)
+배열형(array type), 구조체형(structure type), 공용체형(union type), 포인터형(pointer type)
+
+char <= short <= int <= long <= long long
+1         2       4      4         8
+
+
+- 널 (null) 문자 ('\0') 로 표기
+
+- 오버플로, 언더플로 ( 값이 넘치거나 , 변수의 범위 안에 없는 경우 발생하는 현상)

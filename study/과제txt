@@ -1,0 +1,111 @@
+나머지 1,2,4 는 빈칸채우기 3번은 실행결과 필요
+(출석수업에서 설명한 예제 코드의 실행 결과도 함께 제출)
+
+
+[예제 1] 다음 세 개의 소스코드에서 중복되는 부분을 헤더파일로 만들어 수정하라.
+
+1. main.c
+#include <stdio.h>
+#define A 10
+#define B 20
+#define C 30
+int f(int x1, int x2, int x3);
+int g(int x1, int x2, int x3);
+int main() {
+ int a = 1, b = 2, c = 3;
+ printf("%d, %d, %d\n", A, B, C);
+ printf("%d\n", f(a, b, c) + g(a, b, c));
+}
+
+2. f.c
+#define A 10
+#define B 20
+#define C 30
+int f(int x1, int x2, int x3) {
+    return x1 * A + x2 * B + x3 * C;
+}
+
+3. g.c
+#define A 10
+#define B 20
+#define C 30
+int g(int x1, int x2, int x3) {
+    return (x1 + A) * (x2 + B) * (x3 + C);
+}
+
+[예제 2] 다음 코드의 공란에 적절한 내용을 넣어 완성하라.
+
+1. IntLimits.c
+
+#include <stdio.h>
+#include <limits.h>
+int main() {
+    short int minShrt = ㈀
+;   // short int형의 최솟값
+    short int maxShrt = ㈁
+;   // short int형의 최댓값
+    printf("short int의 크기: %zu\n", ㈂
+);
+    printf("short int 자료형 범위: %d ~ %d\n", minShrt, maxShrt);
+}
+
+2. FloatLimits.c
+
+#include <stdio.h>
+#include <float.h>
+int main() {
+    float minFlt = ㈀
+;   // float형의 가장 미세한 값
+    float maxFlt = ㈁
+;   // float형의 가장 큰한 값
+    printf("float의 크기: %zu\n", ㈂
+);
+    printf("float 자료형 범위: %e ~ %e\n", minFlt, maxFlt);
+}
+
+[예제 3] 다음 두 코드를 각각 실행하여 결과를 구하고, 결과의 차이가 나는 이유를 설명하라.
+
+1. InitG.c
+
+#include <stdio.h>
+
+int x = 0;
+int f() {
+    x = x+1;
+    return x;
+}
+
+int main() {
+    printf("%d\n", f());
+    printf("%d\n", f());
+    printf("%d\n", f());
+}
+
+2. InitL.c
+#include <stdio.h>
+
+int f() {
+    int x = 0;
+    x = x+1;
+    return x;
+}
+
+int main() {
+    printf("%d\n", f());
+    printf("%d\n", f());
+    printf("%d\n", f());
+}
+
+[예제 4] 다음 코드에서 원하는 출력이 나올 수 있게 형식코드를 작성하라.
+
+1. FormatEx.c
+#include <stdio.h>
+int main() {
+    int a = 369;
+    double b = 314.1592;
+    printf("***㈀***\n", a);    // 원하는 출력: ***00369***
+    printf("***㈁***\n", a);    // 원하는 출력: *** +369***
+    printf("***㈂***\n", -a);   // 원하는 출력: ***-369 ***
+    printf("***㈃***\n", b);    // 원하는 출력: ***   314.2***
+    printf("***㈄***\n", b);    // 원하는 출력: *** 3.14e+02***
+}
