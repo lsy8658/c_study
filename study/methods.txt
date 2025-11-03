@@ -1,0 +1,146 @@
+====================================================
+
+[ stdio.h ]
+입출력 함수 printf, scanf, getchar, putchar
+파일 관련 함수 fopen, fclose, fprintf
+--------------------------------------------------
+printf : 출력 함수 (콘솔에 값을 출력)
+사용 예시 : printf("Hello %d", 5);
+출력 : Hello 5
+
+scanf : 입력 함수 (콘솔에서 값 입력 받음)
+사용 예시 : scanf("%d", &num);
+입력 : 10 → 변수 num에 10 저장
+
+getchar : 문자 하나 입력 받음
+사용 예시 : ch = getchar();
+입력 : A → ch = 'A'
+
+putchar : 문자 하나 출력
+사용 예시 : putchar('A');
+출력 : A
+
+fopen : 파일 열기
+사용 예시 : FILE *fp = fopen("data.txt", "r");
+출력 : 파일 포인터 반환 (파일이 없으면 NULL)
+
+fclose : 파일 닫기
+사용 예시 : fclose(fp);
+출력 : 파일이 정상적으로 닫힘
+
+fprintf : 파일에 형식화된 데이터 출력
+사용 예시 : fprintf(fp, "score: %d", 90);
+출력 : 파일에 "score: 90"이 기록됨
+
+====================================================
+
+[ string.h ]
+문자열 처리 함수 strcat, strcmp, strcpy, strlen
+
+----------------------------------------------------
+
+strcat : 문자열 이어붙이기
+사용 예시 : strcat(str1, str2);
+입력 : "Hello", "World" → 출력 : "HelloWorld"
+
+strcmp : 문자열 비교 (같으면 0, 다르면 ±값)
+사용 예시 : strcmp("abc", "abc");
+출력 : 0
+
+strcpy : 문자열 복사
+사용 예시 : strcpy(dest, "Hello");
+출력 : dest = "Hello"
+
+strlen : 문자열 길이 구하기
+사용 예시 : strlen("Hello");
+출력 : 5
+
+====================================================
+
+[ math.h ]
+수학 함수 sqrt, sin, cos, tan, log, fabs
+---------------------------------------------
+sqrt : 제곱근
+사용 예시 : sqrt(9);
+출력 : 3.0
+
+
+sin : 사인값 (라디안 단위)
+사용 예시 : sin(3.14159/2);
+출력 : 1.0
+
+cos : 코사인값
+사용 예시 : cos(0);
+출력 : 1.0
+
+tan : 탄젠트값
+사용 예시 : tan(3.14159/4);
+출력 : 1.0
+
+log : 자연로그 (ln)
+사용 예시 : log(2.71828);
+출력 : 1.0
+
+fabs : 절댓값 (실수 전용)
+사용 예시 : fabs(-3.5);
+출력 : 3.5
+
+====================================================
+
+[ ctype.h ]
+문자 형태 판별 isalpha, isdigit, islower
+문자 변환 함수 tolower, toupper
+------------------------------------------------
+isalpha : 알파벳 문자 여부
+사용 예시 : isalpha('A');
+출력 : 1 (True)
+
+isdigit : 숫자 문자 여부
+사용 예시 : isdigit('9');
+출력 : 1 (True)
+
+islower : 소문자 여부
+사용 예시 : islower('a');
+출력 : 1 (True)
+
+tolower : 대문자를 소문자로 변환
+사용 예시 : tolower('A');
+출력 : 'a'
+
+toupper : 소문자를 대문자로 변환
+사용 예시 : toupper('b');
+출력 : 'B'
+
+
+====================================================
+
+[ stdlib.h ]
+수치변환함수 atoi, strtol
+난수 관련 함수 rand, srand
+정렬/검색 함수 qsortm bsearch
+
+atoi : 문자열을 int로 변환
+사용 예시 : atoi("123");
+출력 : 123
+
+strtol : 문자열을 long으로 변환
+사용 예시 : strtol("1234", NULL, 10);
+출력 : 1234
+
+rand : 난수 생성
+사용 예시 : rand();
+출력 : 0 ~ RAND_MAX 사이의 정수
+
+srand : 난수 시드 설정
+사용 예시 : srand(time(NULL));
+출력 : 난수 패턴이 매번 달라짐
+
+qsort : 배열 정렬
+사용 예시 : qsort(arr, n, sizeof(int), compare);
+출력 : arr이 정렬됨
+
+bsearch : 정렬된 배열에서 이진 탐색
+사용 예시 : bsearch(&key, arr, n, sizeof(int), compare);
+출력 : 찾은 요소의 포인터 (없으면 NULL)
+
+====================================================
