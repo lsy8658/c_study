@@ -26,10 +26,10 @@ int fncMath () {
 };
 // ----------------------------------
 
-int fncStr () { 
-  // isalpha : ??? ???(A–Z, a–z) ?? ??? ? ??
-  // isdigit : ? ??? ?????
-
+int swap (int *a, int *b) { 
+  int temp = *a;
+  *a = *b;
+  *b = temp; 
 }
 
 // ----------------------------------
@@ -39,10 +39,38 @@ int fncStr () {
 // ----------------------------------
 
 // ----------------------------------
+// void test () {
+//   int a = 0;
+//   static int b = 0;
+//   printf("auto => %d  static => %d\n", a,b);
+//   ++a;
+//   ++b;
+// }
+
+// int varTest () {
+//   for (int i = 0; i < 3; i++) {
+//     test();
+//   }   
+// }
 
 // ----------------------------------
+int a = 20;
+int b = 20;
+void externFn () {
+  extern int k; // extern ??? ?? ?? ??.
+  printf("a => %d", a);
+  printf("k => %d", k);
+}
+
+int k = 50;
+// ----------------------------------
 int main () {
- 
+//  int x =  5, y = 3;
+//  swap(&x, &y);
+//  printf("x => %d y => %d", x,y);
+  externFn();
+
+
 }
 
 // ----------------------------------
